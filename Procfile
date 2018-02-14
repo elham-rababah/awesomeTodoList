@@ -1,1 +1,1 @@
-web: node reactserver.js NODE_ENV=production
+web: npm start
