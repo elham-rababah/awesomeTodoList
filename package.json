@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpackserver": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "postinstall":"./node_modules/.bin/webpack"
   },
   "author": "Elham rababah",
   "license": "ISC",
