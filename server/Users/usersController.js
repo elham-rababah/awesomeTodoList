@@ -3,7 +3,6 @@ var usersModel = require('./usersModel');
 
 module.exports = {
 	addNewUser : function (req,res) {
-		console.log(req.body);
 		usersModel.findOne({email :req.body.email})
 		.exec(function (err,user){
 			if (user){
@@ -19,7 +18,6 @@ module.exports = {
 					if (err){
 						res.status(500).send({message:err});
 					} else {
-						console.log(user);
 						res.status(200).send(user);
 					}
 				})
@@ -27,11 +25,8 @@ module.exports = {
 		});
 	},
 	logIn : function (req,res) {
-		console.log(req.body);
 		usersModel.findOne({email :req.body.email})
 		.exec(function (err,user){
-			console.log(err,user)
-			//
 			if (user){
 				usersModel.comparePassword(req.body.password,user.password,res,function(isMatch) {
 					if (isMatch){
