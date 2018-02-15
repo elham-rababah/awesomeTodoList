@@ -31,7 +31,6 @@ module.exports = {
 		})
 	},
 	getAllListForOneUser : function(req,res){
-		console.log(req.params	)
 		ListModel.find({userid:req.params.userid})
 		.exec(function(err,lists){
 			if(lists){
