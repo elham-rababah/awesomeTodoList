@@ -35,7 +35,7 @@ export default class SignIn extends React.Component {
                 email:this.state.email,
             })
             .then(function (res) {
-                localStorage.setItem('userInfo', res.data);
+                localStorage.setItem('userInfo',JSON.stringify(res.data));
                 //send the user to profle 
                 window.location.replace('#/profile/'+ res.data._id);
 
